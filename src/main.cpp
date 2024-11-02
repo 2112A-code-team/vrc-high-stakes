@@ -1,5 +1,6 @@
 #include "lemlib/api.hpp" // IWYU pragma: keep
 #include "main.h"
+#include "globals.hpp"
 
 /**
  * Runs initialization code. This occurs as soon as the program is started.
@@ -84,7 +85,7 @@ void opcontrol() {
         // get joystick positions
         int leftY = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y);
         int rightX = controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_X);
-        // move the chassis with curvature drive
+        // move the chassis with arcade drive
         chassis.arcade(leftY, rightX);
         // delay to save resources
         pros::delay(10);
